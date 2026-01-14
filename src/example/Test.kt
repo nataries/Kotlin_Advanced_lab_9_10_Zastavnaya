@@ -1,3 +1,5 @@
+package example
+
 var age: Int = 10
     set(value) {
         if((value > 0) and (value < 110))
@@ -39,21 +41,21 @@ class Rectangle(val width: Float, val height: Float) : Figure() {
     }
 }
 fun main() {
-//    println(age)
-//    age = 55
-//    println(age)
-//    age = -43
-//    println(age)
-//    val sword = Item(1, "Sword", 1)
+//    println(example.age)
+//    example.age = 55
+//    println(example.age)
+//    example.age = -43
+//    println(example.age)
+//    val sword = example.Item(1, "Sword", 1)
 //    val betterSword = sword.copy(quantity = 2, name = "Better Sword")
 //    println(sword.toString())
 //    println(betterSword.toString())
 //    val(id, name, quantity) = betterSword
 //    println("$id | $name | $quantity")
-//    val denis: Person = Person("Denis", age = 23)
-//    val maksim: Human = Person("Maksim", age = 25)
+//    val denis: example.Person = example.Person("Denis", example.age = 23)
+//    val maksim: example.Human = example.Person("Maksim", example.age = 25)
 //    denis.hello()
 //    maksim.hello()
-//    //val pavel: Human = Human("Pavel")
+//    //val pavel: example.Human = example.Human("Pavel")
 
 }

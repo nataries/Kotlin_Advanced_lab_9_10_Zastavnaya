@@ -1,3 +1,5 @@
+package characters
+
 class Hero(val name: String) {
     var health: Int = 100
         set(value) {
@@ -14,10 +16,10 @@ class Hero(val name: String) {
 }
 
 fun main() {
-    val hero = Hero("Утер")
-    hero.health = 150
-    println(hero.health)
-    println(hero.stamina)
-    //hero.level = 10
-    hero.levelUp()
+//    val hero = characters.Hero("Утер")
+//    hero.health = 150
+//    println(hero.health)
+//    println(hero.stamina)
+//    //hero.level = 10
+//    hero.levelUp()
 }

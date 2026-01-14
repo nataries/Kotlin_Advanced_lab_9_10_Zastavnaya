@@ -1,3 +1,5 @@
+package example
+
 interface Movable{
     var speed: Int
     val model: String
@@ -58,17 +60,17 @@ class WorkingStudent(val name: String) : Worker, Student {
     override fun study() = println("$name учится")
 }
 fun main() {
-//    val car = Car()
-//    val aircraft = Aircraft()
+//    val car = example.Car()
+//    val aircraft = example.Aircraft()
 //      car.move()
 //    aircraft.move()
-//    travel(car)
-//    travel(aircraft)
-//    val anton = WorkingStudent("Anton")
+//    example.travel(car)
+//    example.travel(aircraft)
+//    val anton = example.WorkingStudent("Anton")
 //    anton.work()
 //    anton.study()
-//    val car = Car("LADA", "134LAD")
-//    var aircraft = Aircraft("Boeing", "737")
+//    val car = example.Car("LADA", "134LAD")
+//    var aircraft = example.Aircraft("Boeing", "737")
     val player = MediaPlayer()
     player.play()
 }
