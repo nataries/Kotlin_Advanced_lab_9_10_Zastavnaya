@@ -1,5 +1,7 @@
 package payment
 
+import modules.ModuleResult
+
 fun main() {
     val processor = PaymentProcessor()
     val payments = listOf(
