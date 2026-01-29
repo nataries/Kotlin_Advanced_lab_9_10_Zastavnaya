@@ -121,7 +121,7 @@ Sealed-классы используются для представления �
 - удобно описывать состояния, события и результаты действий.
 
 ### Пример: результат работы модуля
-```
+```kotlin
 sealed class ModuleResult {
     data class Success(val message: String) : ModuleResult()
     data class ResourceProduced(
@@ -145,7 +145,7 @@ object - это специальная конструкция Kotlin, котор
 + не имеет конструктора.
 
 ### Пример: глобальный логгер
-```
+```kotlin
 object Logger {
 private var counter = 0
     fun log(message: String) {
@@ -155,8 +155,8 @@ private var counter = 0
 }
 ```
 
-### Использование
-```
+### Использование:
+```kotlin
 Logger.log("Инициализация системы")
 Logger.log("Модуль запущен")
 ```
