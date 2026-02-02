@@ -4,6 +4,19 @@ import modules.ResearchLab
 import resources.OutpostResource
 import resources.ResourceManager
 
+object SystemLogger {
+    init {
+        println("SystemLogger инициализирован")
+    }
+
+    fun log(message: String) {
+        println("[LOG] $message")
+    }
+}
+
+val logger by lazy {
+    SystemLogger
+}
 fun main() {
     //val manager = resources.ResourceManager()
     //val minerals = resources.OutpostResource(1, "Minerals", 300)
@@ -14,9 +27,15 @@ fun main() {
 
     //val bonus = minerals.copy(amount = minerals.amount + 50)
     //println("Копия минералов с бонусом: $bonus")
+
+    logger.log("Запуск базы")
     val manager = ResourceManager()
-    manager.add(OutpostResource(1, "Minerals", 120))
-    manager.add(OutpostResource(2, "Gas", 40))
+    val loadedResources = FileStorage.load()
+    loadedResources.forEach { manager.add(it) }
+    if (loadedResources.isEmpty()) {
+        manager.add(OutpostResource(1, "Minerals", 300))
+        manager.add(OutpostResource(2, "Gas", 100))
+    }
     val generator = EnergyGenerator()
     val lab = ResearchLab()
     val generatorResult = generator.performAction(manager)
@@ -26,6 +45,7 @@ fun main() {
     handleModuleResult(labResult)
     println()
     manager.printAll()
+    FileStorage.save(resources = manager.getAll())
 //    generator.performAction(manager)
 //    lab.performAction(manager)
 //    println()
