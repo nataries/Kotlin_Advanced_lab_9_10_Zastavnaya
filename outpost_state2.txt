@@ -1,0 +1,2 @@
+Minerals;200
+Energy;190
